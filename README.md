@@ -78,4 +78,4 @@ In this case the wrapper if we are in development environment will execute the f
     	);
     }
 
-Will render the button only in development mode
+Will render the child only in development mode and in production will render the prodChild
