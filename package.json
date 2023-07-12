@@ -1,7 +1,7 @@
 {
   "name": "@viktor998/use-dev",
   "private": false,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "main": "./dist/@viktor998/use-dev.umd.cjs",
   "module": "./dist/@viktor998/use-dev.js",
