@@ -12,6 +12,9 @@
       "require": "./dist/@viktor998/use-dev.umd.cjs"
     }
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
