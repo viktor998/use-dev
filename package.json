@@ -1,15 +1,15 @@
 {
-  "name": "@viktor998/use-dev-test",
+  "name": "@viktor998/use-dev",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "./dist/@viktor998/use-dev-test.umd.cjs",
-  "module": "./dist/@viktor998/use-dev-test.js",
+  "main": "./dist/@viktor998/use-dev.umd.cjs",
+  "module": "./dist/@viktor998/use-dev.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/@viktor998/use-dev-test.js",
-      "require": "./dist/@viktor998/use-dev-test.umd.cjs"
+      "import": "./dist/@viktor998/use-dev.js",
+      "require": "./dist/@viktor998/use-dev.umd.cjs"
     }
   },
   "scripts": {
