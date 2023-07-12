@@ -15,6 +15,13 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/viktor998/use-dev.git"
+  },
+  "bugs": {
+    "url": "https://github.com/viktor998/use-dev/issues"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
