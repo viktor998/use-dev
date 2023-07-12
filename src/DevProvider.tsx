@@ -1,6 +1,5 @@
 import React, { createContext, useState } from "react";
 import NoPage from "./components/NoPage";
-
 export interface DevContextProps {
   isDev: boolean;
   setIsDev: Function;
@@ -12,13 +11,14 @@ interface DevProviderProps {
   dev?: boolean;
 }
 
-interface DevWrapperProps {
-  child: Function | React.ReactElement | React.ReactNode | React.Component | object,
-  prodChild?: Function | React.ReactElement | React.ReactNode | React.Component | object | null,
+type DevWrapperProps<T> = {
+  child: T | (() => T);
+  prodChild?: T | (() => T);
   options?: {
     showBadge: boolean;
-  }
+  };
 }
+
 
 export const DevContext = createContext<DevContextProps>({
   isDev: false,
@@ -62,7 +62,7 @@ const DevProvider: React.FC<DevProviderProps> = ({ children, dev }) => {
     return removeOrigin;
   };
 
-  const useDevWrapper: React.FC<DevWrapperProps> = ({ child, prodChild = null, options = { showBadge: false } }) => {
+  function useDevWrapper<T extends React.ReactElement>({ child, prodChild, options = { showBadge: false } }: DevWrapperProps<T>) {
     if (isDev) {
       if (isComponent(child)) {
         return <DevWrapper {...options}>{child}</DevWrapper>;
