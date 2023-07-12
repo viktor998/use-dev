@@ -30,7 +30,7 @@ App.js
     const  menuItems  = [
     	{ type:  "label", value:  "your path" },
     	{
-    	...useDevWrapper({ type:  "item", value:  "Home", Icon:  CaHome, path:  "home" }), // isDev ? then it will return the object else the value will be {}
+    	...useDevWrapper({child : { type:  "item", value:  "Home", Icon:  CaHome, path:  "home" }}), // isDev ? then it will return the object else the value will be {}
     	},
     	{ type:  "label", value:  "your profile", path:  "your-profile" },
     	{ type:  "item", value:  "Invoices", Icon:  CaInvoices, path:  "invoices" },
@@ -44,7 +44,7 @@ App.js
 
 **EXAMPLE 2**
 
-        <Button  variant="contained"  color="primary"  onClick={() =>  useDevWrapper(() =>  exe("hello world"))}>
+        <Button  variant="contained"  color="primary"  onClick={() =>  useDevWrapper({child: () =>  exe("hello dev"), prodChild: () =>  exe("hello prod") })}>
     		HELLO WOLRD
     	</Button>
 
@@ -62,9 +62,17 @@ In this case the wrapper if we are in development environment will execute the f
     return (
     		<>
     			{useDevWrapper(
-    				<Button  variant="contained"  color="primary"  onClick={() =>   exe("hello world")}>
-    					HELLO WOLRD
-    				</Button>
+    				{
+    					child: <Button  variant="contained"  color="primary"  onClick={() =>   exe("hello world")}>
+    								HELLO DEV
+    							</Button>,
+    					prodChild: <Button  variant="contained"  color="primary"  onClick={() =>   exe("hello world")}>
+    									HELLO PROD
+    								</Button>,
+    					options: {
+    						showBadge: true // default is false
+    					}
+    				}
     			)}
     		</>
     	);

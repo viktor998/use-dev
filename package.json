@@ -1,6 +1,6 @@
 {
   "name": "@viktor998/use-dev",
-  "private": true,
+  "private": false,
   "version": "1.0.0",
   "type": "module",
   "main": "./dist/@viktor998/use-dev.umd.cjs",
